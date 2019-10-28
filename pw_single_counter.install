@@ -1,0 +1,38 @@
+<?php
+use Drupal\field\Entity\FieldStorageConfig;
+
+const PARAGRAPH_NAME = 'pw_single_counter';
+
+const FIELD_NUMBER = 'field_pw_number';
+
+const FIELD_TITLE = 'field_pw_title';
+
+
+/**
+ * @throws \Drupal\Component\Plugin\Exception\InvalidPluginDefinitionException
+ * @throws \Drupal\Component\Plugin\Exception\PluginNotFoundException
+ * @throws \Drupal\Core\Entity\EntityStorageException
+ */
+function pw_single_counter_uninstall(){
+
+  $field_number = FieldStorageConfig::loadByName('paragraph', FIELD_NUMBER);
+  $field_title = FieldStorageConfig::loadByName('paragraph', FIELD_TITLE);
+
+  if ($field_number) {
+    // Delete this field.
+    $field_number->delete();
+  }
+  if ($field_title) {
+    $field_title->delete();
+  }
+
+  $paragraph_types = array(PARAGRAPH_NAME);
+  foreach ($paragraph_types as $paragraph_type) {
+    $para_type = \Drupal::entityManager()->getStorage('paragraphs_type')->load($paragraph_type);
+    if ($para_type) {
+      $para_type->delete();
+    }
+  }
+}
+
+

@@ -1,0 +1,7 @@
+name: 'Pw Single Counter'
+type: module
+description: 'Provide paragraph counter contains 2 fields'
+core: 8.x
+package: 'PixelWeb'
+dependencies:
+  - pw

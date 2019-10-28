@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.pw_single_counter.field_pw_title
+    - field.field.paragraph.pw_single_counter.field_pw_number
+    - paragraphs.paragraphs_type.pw_single_counter
+id: paragraph.pw_single_counter.default
+targetEntityType: paragraph
+bundle: pw_single_counter
+mode: default
+content:
+  field_pw_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: 'ie. any label for this field'
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
+  field_pw_number:
+    weight: 0
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+hidden:
+  created: true
+  status: true
+  uid: true

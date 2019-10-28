@@ -1,0 +1,17 @@
+{
+    "name": "crafterr/pw_single_counter",
+    "type": "drupal-module",
+    "description": "Provide paragraph counter contains 2 fields",
+    "keywords": ["Drupal"],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1"
+    },
+    "authors": [
+        {
+            "name": "Adam Pietras",
+            "email": "adam@crafter.net.pl"
+        }
+    ]
+}
